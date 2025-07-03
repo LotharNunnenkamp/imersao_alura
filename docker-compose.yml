@@ -1,0 +1,10 @@
+services:
+  # Serviço da sua aplicação
+  app:
+    build: . # Constrói a imagem a partir do Dockerfile na raiz do projeto
+    container_name: api_imersao_devops # Nomeia o contêiner
+    ports:
+      - "8000:8000" # Mapeia a porta 8000 do contêiner para a porta 8000 do seu computador
+    volumes:
+      - .:/app # Monta o diretório atual (onde está seu código) em /app dentro do contêiner
+              # As alterações são automaticamente refletidas no container devido ao --reload do uvicorn
